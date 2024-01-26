@@ -1,11 +1,12 @@
 import socket,json
 
 SERVER_IP="127.0.0.1"
-SERVER_PORT=5005
+SERVER_PORT=20009
 
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock_service:
     sock_service.connect((SERVER_IP, SERVER_PORT))
+    print(f"connesso a {SERVER_IP} {SERVER_PORT}")
     while True:
         primoNumero=float(input("inserisci il primo numero"))
         operazione=input("inserisci l'operazione (+,-,*,/,%)")
