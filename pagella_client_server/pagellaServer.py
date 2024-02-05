@@ -31,7 +31,7 @@ def comm_list(diz):
     risposta='OK'
     valori=diz
     dati={'risposta':risposta,
-          'valori':diz}
+          'valori':valori}
     return dati
 
 def comm_get(diz,parametri):
@@ -41,6 +41,28 @@ def comm_get(diz,parametri):
         valori=diz[nomestudente]
     else:
         risposta='KO'
+        valori="studente inesistente"
+    dati={'risposta':risposta,
+          'valori':valori}
+    return dati
+
+def comm_set(diz):
+    nomestudente=input("inserisci il nome dello studente")
+    if(trova_stud(diz,nomestudente)):
+        risposta='KO'
+        valori='studente già inserito'
+    else:
+        diz[nomestudente]=[]
+        risposta='OK'
+        valori='studente inserito correttamente'
+    dati={'risposta':risposta,
+          'valori':valori}
+    return dati
+
+
+    
+
+
 
 
 
